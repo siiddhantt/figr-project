@@ -1,0 +1,40 @@
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.landing .container {
+  position: relative;
+  cursor: url("./assets/icons/green-arrow.png"), auto;
+  width: fit-content;
+}
+
+.landing .content {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.glassy-card {
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(
+    to bottom right,
+    #1a1a1a 0%,
+    rgb(11, 11, 11) 100%
+  );
+  border-radius: 28px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(64, 59, 59, 0.3);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: 400;
+  color: rgba(81, 81, 81);
+}
