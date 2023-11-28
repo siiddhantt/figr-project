@@ -31,7 +31,7 @@ function Text() {
           scrollTrigger: {
             trigger: char,
             start: "top 80%",
-            end: "top 20%",
+            end: "top 24%",
             scrub: true,
             markers: false,
             toggleActions: "play play reverse reverse",

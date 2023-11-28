@@ -1,14 +1,29 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import Frame from "../assets/frame.png";
 import ArrowIcon from "../svgComponents/ArrowIcon";
 import FrameCard from "../svgComponents/FrameCard";
 
 function Landing() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["1 1", "1.8 1"],
+  });
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const scaleY = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
   return (
     <div className="landing">
-      <div className="container">
+      <motion.div
+        className="container"
+        ref={ref}
+        style={{
+          originX: "100px",
+          rotateX,
+          scaleY,
+        }}
+      >
         <img className="background" src={Frame}></img>
         <div className="content">
           <div className="flex items-start w-96">
@@ -27,7 +42,7 @@ function Landing() {
             <FrameCard />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
